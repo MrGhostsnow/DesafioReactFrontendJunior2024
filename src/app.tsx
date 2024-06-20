@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import TodoList from "../src/components/TodoList";
 import TodoFooter from "../src/components/TodoFooter";
+import DownArrow from "../src/assets/down-arrow.png";
 
 export interface Todo {
   id: number;
@@ -80,7 +81,7 @@ const TodoApp: React.FC = () => {
             onKeyDown={addTodo}
           />
           <span className="toggle-all" onClick={completeAll}>
-            &#9660;
+            <img src={DownArrow} alt="Toggle all" />
           </span>
         </header>
         <section className="main">

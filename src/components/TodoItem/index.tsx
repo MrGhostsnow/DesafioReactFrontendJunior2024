@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Todo } from "../../app";
+import Clear from "../../assets/clear.png";
 
 interface TodoItemProps {
   todo: Todo;
@@ -39,10 +40,9 @@ const TodoItem: React.FC<TodoItemProps> = ({
             onChange={() => toggleTodo(todo.id)}
           />
           <label onDoubleClick={handleEdit}>{todo.title}</label>
-          <button
-            className="destroy"
-            onClick={() => deleteTodo(todo.id)}
-          ></button>
+          <button className="destroy" onClick={() => deleteTodo(todo.id)}>
+            <img src={Clear} alt="Clear" width="20px" />
+          </button>
         </div>
       ) : (
         <input
