@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TodoList from "../src/components/TodoList";
 import TodoFooter from "../src/components/TodoFooter";
 import DownArrow from "../src/assets/down-arrow.png";
@@ -20,13 +14,25 @@ export interface Todo {
 const TodoApp: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [newTodo, setNewTodo] = useState("");
+  const [isMounted, setIsMounted] = useState(true); // Variável de controle para verificar se o componente está montado
 
   useEffect(() => {
     axios
       .get(
         "https://my-json-server.typicode.com/EnkiGroup/DesafioReactFrontendJunior2024/todos"
       )
-      .then((response) => setTodos(response.data));
+      .then((response) => {
+        if (isMounted) {
+          setTodos(response.data);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching todos:", error);
+      });
+
+    return () => {
+      setIsMounted(false);
+    };
   }, []);
 
   const addTodo = (e: React.KeyboardEvent<HTMLInputElement>) => {

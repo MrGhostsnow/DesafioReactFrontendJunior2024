@@ -14,9 +14,7 @@ const TodoFooter: React.FC<TodoFooterProps> = ({
 
   return (
     <footer className="footer">
-      <span className="todo-count">
-        <strong>{remainingTodos}</strong> items left
-      </span>
+      <span className="todo-count">{remainingTodos} items left</span>
       <ul className="filters">
         <li>
           <Link to="/" className={location.pathname === "/" ? "selected" : ""}>

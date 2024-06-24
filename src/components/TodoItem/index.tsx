@@ -40,7 +40,11 @@ const TodoItem: React.FC<TodoItemProps> = ({
             onChange={() => toggleTodo(todo.id)}
           />
           <label onDoubleClick={handleEdit}>{todo.title}</label>
-          <button className="destroy" onClick={() => deleteTodo(todo.id)}>
+          <button
+            className="destroy"
+            onClick={() => deleteTodo(todo.id)}
+            data-testid="delete-button"
+          >
             <img src={Clear} alt="Clear" width="20px" />
           </button>
         </div>
