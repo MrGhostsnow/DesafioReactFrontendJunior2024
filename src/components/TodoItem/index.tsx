@@ -1,13 +1,6 @@
 import React, { useState } from "react";
-import { Todo } from "../../app";
 import Clear from "../../assets/clear.png";
-
-interface TodoItemProps {
-  todo: Todo;
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
-  updateTodo: (id: number, title: string) => void;
-}
+import { TodoItemProps } from "../../interfaces/TodoItemProps";
 
 const TodoItem: React.FC<TodoItemProps> = ({
   todo,

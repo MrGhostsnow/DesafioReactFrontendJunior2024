@@ -1,14 +1,8 @@
 import React from "react";
-import { Todo } from "../../app";
+import { Todo } from "../../interfaces/TodoApp";
 import TodoItem from "../TodoItem";
 import { useParams } from "react-router-dom";
-
-interface TodoListProps {
-  todos: Todo[];
-  toggleTodo: (id: number) => void;
-  deleteTodo: (id: number) => void;
-  updateTodo: (id: number, title: string) => void;
-}
+import { TodoListProps } from "../../interfaces/TodoListProps";
 
 const TodoList: React.FC<TodoListProps> = ({
   todos,

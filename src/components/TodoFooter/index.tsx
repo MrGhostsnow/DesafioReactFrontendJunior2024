@@ -1,10 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-
-interface TodoFooterProps {
-  remainingTodos: number;
-  clearCompleted: () => void;
-}
+import { TodoFooterProps } from "../../interfaces/TodoFooterProps";
 
 const TodoFooter: React.FC<TodoFooterProps> = ({
   remainingTodos,

@@ -4,12 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import TodoList from "../src/components/TodoList";
 import TodoFooter from "../src/components/TodoFooter";
 import DownArrow from "../src/assets/down-arrow.png";
-
-export interface Todo {
-  id: number;
-  title: string;
-  completed: boolean;
-}
+import { Todo } from "./interfaces/TodoApp";
 
 const TodoApp: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import TodoList from "../components/TodoList";
-import { Todo } from "../app";
+import { Todo } from "../interfaces/TodoApp";
 
 const todos: Todo[] = [
   { id: 1, title: "Test Todo 1", completed: false },

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import TodoItem from "../components/TodoItem";
-import { Todo } from "../app";
+import { Todo } from "../interfaces/TodoApp";
 
 const todo: Todo = { id: 1, title: "Test Todo", completed: false };
 
